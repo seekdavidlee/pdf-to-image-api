@@ -58,5 +58,12 @@ namespace PdfToImageApi.Controllers
             }
             return Ok(images);
         }
+
+        [HttpGet("image-types")]
+        public IActionResult GetImageTypes()
+        {
+            var names = Enum.GetNames(typeof(SkiaSharp.SKEncodedImageFormat));
+            return Ok(names);
+        }
     }
 }
